@@ -10,7 +10,13 @@ module.exports = {
       modules: true
     }
   },
-  extends: ['plugin:prettier/recommended', 'plugin:jest-dom/recommended', 'react', 'prettier'],
+  extends: [
+    'plugin:prettier/recommended',
+    'plugin:jest-dom/recommended',
+    'plugin:react/recommended',
+    'react',
+    'prettier'
+  ],
   rules: { 'prettier/prettier': ['error', { endOfLine: 'auto' }] },
   settings: {
     react: {
