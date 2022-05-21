@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Routes from './Routes';
 
 export default function App() {
   return (
     <div>
-      <h1>Damoa</h1>
       <nav
         style={{
           borderBottom: 'solid 1px',
@@ -12,8 +12,9 @@ export default function App() {
         }}>
         <Link to="/">Main</Link>
         <Link to="/notice">Notice</Link>
-        <Link to="/my_page">My Page</Link>
+        <Link to="/mypage">My Page</Link>
       </nav>
+      <Routes />
     </div>
   );
 }
