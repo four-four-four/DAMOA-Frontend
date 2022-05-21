@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server --open",
+    "build": "webpack"
   },
   "eslintConfig": {
     "extends": [
@@ -25,11 +26,16 @@
   },
   "homepage": "https://github.com/four-four-four/DAMOA-Frontend-new#readme",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
-    "@mui/material": "^5.7.0",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.0",
     "@mui/styled-engine-sc": "^5.7.0",
     "axios": "^0.27.2",
+    "file-loader": "^6.2.0",
+    "markdown-to-jsx": "^7.1.7",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-redux": "^8.0.1",
