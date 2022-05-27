@@ -1,11 +1,12 @@
 // main page
 import React from 'react';
+import MainContainer from '../containers/MainContainer';
 
 const MainPage = () => {
 
     return (
         <>
-            <h1>메인 페이지</h1>
+            <MainContainer />
         </>
     )
 };
