@@ -17,7 +17,9 @@ export default function App() {
       <nav
         style={{
           borderBottom: 'solid 1px',
-          padding: '2rem'
+          // padding: '2rem'
+          paddingTop: '1rem',
+          paddingBottom: '1rem',
         }}>
 
         <AppBar position="static">
