@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styled, { createGlobalStyle } from "styled-components";
 import Grid from '@mui/material/Grid';
+import Footer from '../components/main/Footer';
 import Item from './Item';
 import Loader from './Loader';
 
@@ -50,6 +51,12 @@ const ListItem = (props) => {
     )
 }
 
+const MainWrapper = styled.div`
+    max-width: 100%;
+    // padding-top: 10rem;
+    // padding-bottom: 14.1rem;
+`;
+
 const MainContainer = () => {
 
     const [target, setTarget] = useState(null);
@@ -90,27 +97,33 @@ const MainContainer = () => {
 
     return (
         <>
-            <Grid container spacing={2} style={{'height': '70px', 'borderRadius': '14px', margin: '0.5rem', 'backgroundColor': 'rgb(255, 60, 172)', 'backgroundImage': 'linear-gradient(220deg, rgb(255, 60, 172) 0%, rgb(120, 75, 160) 50%, rgb(43, 134, 197) 100%)'}}>
-                <Grid item xs={0}>
-                    <ListItem>개발자</ListItem>
+            <MainWrapper>
+                <Grid container spacing={2} style={{'height': '70px', 'borderRadius': '14px', margin: '0.5rem', 'backgroundColor': 'rgb(255, 60, 172)', 'backgroundImage': 'linear-gradient(220deg, rgb(255, 60, 172) 0%, rgb(120, 75, 160) 50%, rgb(43, 134, 197) 100%)'}}>
+                    <Grid item xs={0}>
+                        <ListItem>개발자</ListItem>
+                    </Grid>
+                    <Grid item xs={0}>
+                        <ListItem>애플</ListItem>
+                    </Grid>
+                    <Grid item xs={0}>
+                        <ListItem>정치</ListItem>
+                    </Grid>
                 </Grid>
-                <Grid item xs={0}>
-                    <ListItem>애플</ListItem>
-                </Grid>
-                <Grid item xs={0}>
-                    <ListItem>정치</ListItem>
-                </Grid>
-            </Grid>
 
-            <GlobalStyle />
-            <AppWrap> 
-                {itemLists.map((v, i) => {
-                    return <Item number={i + 1} key={i} />;
-                })}
-                <div ref={setTarget} className="Target-Element">
-                    {isLoaded && <Loader />}
-                </div>
-            </AppWrap>
+                <GlobalStyle />
+
+                <div style={{width:'100%', height:'10rem'}}>메인 내용들 작업중...</div>
+
+                {/* <AppWrap> 
+                    {itemLists.map((v, i) => {
+                        return <Item number={i + 1} key={i} />;
+                    })}
+                    <div ref={setTarget} className="Target-Element">
+                        {isLoaded && <Loader />}
+                    </div>
+                </AppWrap> */}
+                <Footer />
+            </MainWrapper>
         </>
     );
 };
