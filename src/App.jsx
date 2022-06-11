@@ -15,45 +15,43 @@ export default function App() {
   return (
     <div>
       <nav
-        style={{
-          borderBottom: 'solid 1px',
-          // padding: '2rem'
-          paddingTop: '1rem',
-          paddingBottom: '1rem',
-        }}>
-
+        style={
+          {
+            // borderBottom: 'solid 1px'
+            // padding: '2rem'
+            // paddingTop: '1rem',
+            // paddingBottom: '1rem'
+          }
+        }>
         <AppBar position="static">
-            <Toolbar variant="dense">
-                <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-                
-                </IconButton>
-                <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1, alignSelf: 'flex-end', margin: 'auto' }}>
-                    <Link href="/" color="inherit" underline="none" sx={{marginRight: 2}}>
-                        홈
-                    </Link>
-                    <Link href="/" color="inherit" underline="none" sx={{marginRight: 2}}>
-                        트렌드
-                    </Link>
-                    <Link href="/Notice" color="inherit" underline="none" sx={{marginRight: 2}}>
-                        공지사항
-                    </Link>
-                    <Link href="/mypage" color="inherit" underline="none">
-                        마이 페이지
-                    </Link>
-                </Typography>
+          <Toolbar variant="dense">
+            <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}></IconButton>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ flexGrow: 1, alignSelf: 'flex-end', margin: 'auto' }}>
+              <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
+                홈 (다모아 로고)
+              </Link>
+              <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
+                오늘의 모아
+              </Link>
+              <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
+                모아분야
+              </Link>
+              <Link href="/Notice" color="inherit" underline="none">
+                공지사항
+              </Link>
+            </Typography>
 
-                <IconButton
-                    size="large"
-                    aria-label="display more actions"
-                    edge="end"
-                    color="inherit"
-                >
-                    {/* 로그인 전 아이콘 */}
-                    <LoginIcon />
-                    {/* 로그인 후 아이콘 */}
-                    {/* <ArrowDropDownIcon /> */}
-                </IconButton>
-            </Toolbar>
+            <IconButton size="large" aria-label="display more actions" edge="end" color="inherit">
+              {/* 로그인 전 아이콘 */}
+              <LoginIcon />
+              {/* 로그인 후 아이콘 */}
+              {/* <ArrowDropDownIcon /> */}
+            </IconButton>
+          </Toolbar>
         </AppBar>
 
         {/* <Link to="/">Main</Link>
