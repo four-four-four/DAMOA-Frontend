@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     margin: 0px;
   }
-
   body {
     background-color: #f2f5f7;
   }
@@ -27,7 +26,6 @@ const AppWrap = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-
   .Target-Element {
     width: 100vw;
     height: 140px;
