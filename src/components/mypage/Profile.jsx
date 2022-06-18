@@ -32,7 +32,7 @@ const Profile = (props) => {
         <Typography>직업</Typography>
         <TextField disabled variant="outlined" defaultValue="취업준비생" />
         <StyledButton variant="contained">수정</StyledButton>
-      </StyledBox>
+      </StyledBox>  
     </>
   );
 };

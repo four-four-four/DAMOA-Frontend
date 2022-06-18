@@ -1,28 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
-import MyPageSideBar from '../../components/mypage/myPageSideBar';
+import React from 'react';
+import MyPageSideBar from '../../components/mypage/MyPageSideBar';
 import Profile from '../../components/mypage/Profile';
-import ManageKeyWord from '../../components/mypage/ManageKeyWord';
-import Scrap from '../../components/mypage/Scrap';
-import { StyledLayout } from './MyPage.styled';
 import { Grid } from '@mui/material';
+import { StyledLayout } from './MyPage.styled';
 
 const MyPage = () => {
-  const myRef = useRef();
-  const [show, setShow] = useState();
-
-  // useEffect(() => {
-  //   // const profile = document.querySelectorAll('.mypage-box');
-  //   const observer = new IntersectionObserver(([entries]) => {
-  //     console.log('entry', entries);
-  //     //setShow(entry.isIntersecting);
-  //   });
-
-  //   observer.observe(myRef.current);
-
-  //   // profile.forEach((p) => {
-  //   //   observer.observe(profile[0]);
-  //   // });
-  // }, []);
   return (
     <>
       <StyledLayout container wrap="nowrap">

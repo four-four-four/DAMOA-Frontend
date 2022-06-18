@@ -5,7 +5,6 @@ export const StyledBox = styled(Box)((props) => ({
   padding: '20px',
   opacity: !props.show && 0,
   transform: props.show ? 'translateY(0)' : 'translateY(100px)',
-  //transition: !props.show && '0.5s''
   transition: '0.5s'
 }));
 
