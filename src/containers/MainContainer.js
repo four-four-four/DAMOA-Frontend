@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styled, { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from 'styled-components';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Footer from '../components/main/Footer';
@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     margin: 0px;
   }
-
   body {
     background-color: #f2f5f7;
   }
@@ -27,7 +26,6 @@ const AppWrap = styled.div`
   justify-content: center;
   text-align: center;
   align-items: center;
-
   .Target-Element {
     width: 100vw;
     height: 140px;
@@ -38,85 +36,119 @@ const AppWrap = styled.div`
   }
 `;
 
-
 // 리스트 아이템 컴포넌트
 const ListItem = (props) => {
+  console.log('props', props);
 
-    console.log('props', props);
-
-    return (
-        <div style={{'minWidth': '64px','backgroundColor': 'black', 'color': 'white', 'padding': '0 16px', 'fontWeight': '600'
-        , 'textAlign': 'center', 'height': '36px', 'borderRadius': '4px', 'alignItems': 'center', 'display': 'inline-flex'
-        }}>
-            {props.children}
-        </div>
-    )
-}
+  return (
+    <div
+      style={{
+        minWidth: '64px',
+        backgroundColor: 'black',
+        color: 'white',
+        padding: '0 16px',
+        fontWeight: '600',
+        textAlign: 'center',
+        height: '36px',
+        borderRadius: '4px',
+        alignItems: 'center',
+        display: 'inline-flex'
+      }}>
+      {props.children}
+    </div>
+  );
+};
 
 const MainWrapper = styled.div`
-    max-width: 100%;
-    // padding-top: 10rem;
-    // padding-bottom: 14.1rem;
+  max-width: 100%;
+  // padding-top: 10rem;
+  // padding-bottom: 14.1rem;
 `;
 
 const MainContainer = () => {
+  const [target, setTarget] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [itemLists, setItemLists] = useState([1]);
 
-    const [target, setTarget] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-    const [itemLists, setItemLists] = useState([1]);
+  useEffect(() => {
+    console.log(itemLists);
+  }, [itemLists]);
 
-    useEffect(() => {
-        console.log(itemLists);
-    }, [itemLists]);
-
-    const getMoreItem = async () => {
-        setIsLoaded(true);
-        await new Promise((resolve) => setTimeout(resolve, 1500));
-        let Items = [1, 2, 3, 4, 5];
-        setItemLists((itemLists) => itemLists.concat(Items));
-        setIsLoaded(false);
-    };
+  const getMoreItem = async () => {
+    setIsLoaded(true);
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+    let Items = [1, 2, 3, 4, 5];
+    setItemLists((itemLists) => itemLists.concat(Items));
+    setIsLoaded(false);
+  };
 
   const onIntersect = async ([entry], observer) => {
     if (entry.isIntersecting && !isLoaded) {
-        observer.unobserve(entry.target);
-        await getMoreItem();
-        observer.observe(entry.target);
+      observer.unobserve(entry.target);
+      await getMoreItem();
+      observer.observe(entry.target);
     }
   };
 
   useEffect(() => {
-        let observer;
-        if (target) {
-            observer = new IntersectionObserver(onIntersect, {
-                threshold: 0.4,
-            });
-            observer.observe(target);
-        }
-      return () => observer && observer.disconnect();
+    let observer;
+    if (target) {
+      observer = new IntersectionObserver(onIntersect, {
+        threshold: 0.4
+      });
+      observer.observe(target);
+    }
+    return () => observer && observer.disconnect();
   }, [target]);
 
+  return (
+    <>
+      <MainWrapper>
+        <Box
+          sx={{
+            width: 1,
+            height: 70,
+            mt: 2,
+            borderRadius: '14px',
+            backgroundColor: 'rgb(120, 75, 160)'
+          }}>
+          <Button
+            variant="outlined"
+            sx={{
+              m: 2,
+              minWidth: 100,
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              fontWeight: 'bold'
+            }}>
+            개발자
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              m: 2,
+              minWidth: 100,
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              fontWeight: 'bold'
+            }}>
+            애플
+          </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              m: 2,
+              minWidth: 100,
+              backgroundColor: '#000000',
+              color: '#FFFFFF',
+              fontWeight: 'bold'
+            }}>
+            정치
+          </Button>
+        </Box>
 
-    return (
-        <>
-            <MainWrapper>
-
-                <Box
-                    sx={{
-                        width: 1,
-                        height: 70,
-                        mt: 2,
-                        borderRadius: '14px',
-                        backgroundColor: 'rgb(120, 75, 160)',
-                    }}
-                >
-                        <Button variant="outlined" sx={{m:2, minWidth: 100, backgroundColor: '#000000', color: '#FFFFFF', fontWeight: 'bold'}}>개발자</Button>
-                        <Button variant="outlined" sx={{m:2, minWidth: 100, backgroundColor: '#000000', color: '#FFFFFF', fontWeight: 'bold'}}>애플</Button>
-                        <Button variant="outlined" sx={{m:2, minWidth: 100, backgroundColor: '#000000', color: '#FFFFFF', fontWeight: 'bold'}}>정치</Button>
-                </Box>
-                
-                {/* 기존 소스 */}
-                {/* <Grid container spacing={2} style={{'height': '70px', 'borderRadius': '14px', 
+        {/* 기존 소스 */}
+        {/* <Grid container spacing={2} style={{'height': '70px', 'borderRadius': '14px', 
                 margin: '0.5rem', 
                 'backgroundColor': 'rgb(255, 60, 172)', 
                 'backgroundImage': 'linear-gradient(220deg, rgb(255, 60, 172) 0%, rgb(120, 75, 160) 50%, rgb(43, 134, 197) 100%)'}}>
@@ -131,10 +163,9 @@ const MainContainer = () => {
                     </Grid>
                 </Grid> */}
 
+        <div style={{ width: '100%', height: '10rem' }}>메인 내용들 작업중...</div>
 
-                <div style={{width:'100%', height:'10rem'}}>메인 내용들 작업중...</div>
-
-                {/* <AppWrap> 
+        {/* <AppWrap> 
                     {itemLists.map((v, i) => {
                         return <Item number={i + 1} key={i} />;
                     })}
@@ -142,10 +173,10 @@ const MainContainer = () => {
                         {isLoaded && <Loader />}
                     </div>
                 </AppWrap> */}
-                <Footer />
-            </MainWrapper>
-        </>
-    );
+        <Footer />
+      </MainWrapper>
+    </>
+  );
 };
 
 export default MainContainer;

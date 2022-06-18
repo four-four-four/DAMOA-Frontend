@@ -1,6 +1,6 @@
 import React from 'react';
-import AccountDetail from '../../components/mypage/AccountDetail';
+import MyPage from '../../components/mypage/index.js';
 
 export default function index() {
-  return <AccountDetail />;
+  return <MyPage />;
 }
