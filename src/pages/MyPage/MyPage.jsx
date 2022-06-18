@@ -2,7 +2,7 @@ import React from 'react';
 import MyPageSideBar from '../../components/mypage/MyPageSideBar';
 import Profile from '../../components/mypage/Profile';
 import { Grid } from '@mui/material';
-import { StyledLayout } from './MyPage.styled';
+import { StyledLayout } from './mypage.styled';
 
 const MyPage = () => {
   return (
