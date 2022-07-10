@@ -1,6 +1,9 @@
 import React from 'react';
 import MyPageSideBar from '../../components/mypage/MyPageSideBar';
 import Profile from '../../components/mypage/Profile';
+import MyPageContainer from '../../containers/MyPageContainer';
+import Scrap from '../../components/mypage/Scrap';
+import ManageKeyWord from '../../components/mypage/ManageKeyWord';
 import { Grid } from '@mui/material';
 import { StyledLayout } from './mypage.styled';
 
@@ -14,15 +17,13 @@ const MyPage = () => {
         <Grid
           item
           sx={{
-            maxHeight: '500px',
             overflowY: 'scroll',
             marginLeft: '250px'
           }}
-          flex="3">
-          <Profile />
-          <Profile />
-          <Profile />
-          <Profile />
+          flex="6">
+          <MyPageContainer />
+
+          <ManageKeyWord />
         </Grid>
       </StyledLayout>
     </>
