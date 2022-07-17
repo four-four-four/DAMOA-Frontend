@@ -1,11 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 const FontStyles = createGlobalStyle`
-
-@font-face {
-    font-family: 'Lato';
-    src: local('Lato'), url(./fonts/Lato-Regular.otf) format('opentype');
-}
+font-family: 'Noto Serif KR', serif;
 `;
 
 export default FontStyles;
