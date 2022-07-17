@@ -12,7 +12,7 @@ export const useObserver = (ref, options) => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.4, rootMargin }
+      { threshold: 0.8, rootMargin }
     );
 
     observer.observe(ref.current);

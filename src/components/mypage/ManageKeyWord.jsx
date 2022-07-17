@@ -1,8 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { StyledBox } from './common.styled';
+import { StyledBox, StyledKeyWordItem, StyledBoard } from './common.styled';
 import { useObserver } from '../../hooks/useObserver';
+import CloseIcon from '@mui/icons-material/Close';
+import { Grid } from '@mui/material';
 
-const ManageKeyWord = (props) => {
+const ManageKeyWord = ({ keywords, handleDelete }) => {
   const ref = useRef();
   const [show, setShow] = useState(0);
   const entry = useObserver(ref, { rootMargin: '0px' });
@@ -14,13 +16,26 @@ const ManageKeyWord = (props) => {
   }, [entry]);
 
   return (
-    <StyledBox ref={ref} show={show} className="mypage-box">
-      <ul>
-        <li>금융</li>
-        <li>비트코인</li>
-        <li>주식</li>
-      </ul>
-    </StyledBox>
+    <div id="manage-keyword-wrapper">
+      <StyledBoard ref={ref} show={show}>
+        {keywords?.map((item, idx) => (
+          <React.Fragment key={`keyword-${idx}`}>
+            <StyledKeyWordItem>
+              <Grid item xs={6} className="keyword-text">
+                {item}
+              </Grid>
+              <Grid item xs={2} className="keyword-icon">
+                <CloseIcon
+                  onClick={() => {
+                    handleDelete(idx);
+                  }}
+                />
+              </Grid>
+            </StyledKeyWordItem>
+          </React.Fragment>
+        ))}
+      </StyledBoard>
+    </div>
   );
 };
 

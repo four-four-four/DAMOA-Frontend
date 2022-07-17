@@ -1,29 +1,40 @@
 import React from 'react';
 import MyPageSideBar from '../../components/mypage/MyPageSideBar';
-import Profile from '../../components/mypage/Profile';
 import MyPageContainer from '../../containers/MyPageContainer';
-import Scrap from '../../components/mypage/Scrap';
-import ManageKeyWord from '../../components/mypage/ManageKeyWord';
 import { Grid } from '@mui/material';
 import { StyledLayout } from './mypage.styled';
+import { useState } from 'react';
 
 const MyPage = () => {
+  const sidebarItems = [
+    { id: 'profile', label: '회원정보', icon: 'inbox' },
+    { id: 'manage-keyword', label: '키워드 관리', icon: 'account_circle' },
+    { id: 'scrap', label: '스크랩', icon: 'bookmark' }
+  ];
+
+  const [focusComponent, setFocusComponent] = useState('');
+
+  const handleFocus = (clickedItem) => {
+    setFocusComponent(clickedItem);
+  };
+
   return (
     <>
       <StyledLayout container wrap="nowrap">
         <Grid item>
-          <MyPageSideBar />
+          <MyPageSideBar handleFocus={handleFocus} sidebarItems={sidebarItems} />
         </Grid>
         <Grid
+          id="scroller"
           item
           sx={{
-            overflowY: 'scroll',
-            marginLeft: '250px'
+            position: 'relative',
+            overflowY: 'auto',
+            marginLeft: '150px',
+            maxHeight: '500px'
           }}
           flex="6">
-          <MyPageContainer />
-
-          <ManageKeyWord />
+          <MyPageContainer focusComponent={focusComponent} />
         </Grid>
       </StyledLayout>
     </>
