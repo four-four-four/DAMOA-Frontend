@@ -1,153 +1,136 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 
-const FooterBlock = styled.footer`
-  width: 100%;
-  height: 46rem;
-  margin-top: 3.8rem;
-`;
+function generate(element) {
+  return [0, 1, 2].map((value) =>
+    React.cloneElement(element, {
+      key: value,
+    }),
+  );
+}
 
-const Contents = styled.div`
-    // width: 128rem;
-    margin: 0 auto;
-`;
+const Demo = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.background.paper,
+}));
 
-const Grid = styled.div`
-    display: grid;
-    grid-template-columns: 0.3fr 0.3fr 0.3fr 0.3fr;
-    border-bottom: solid 1px #cbcbcb;
-    padding-bottom: 3.5rem;
-    margin-top: 3.2rem;
-`;
+export default function InteractiveList() {
 
-const StyledP = styled.p`
-  font-size: 2rem;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.4px;
-  color: ${(props) => props.theme.grey1_color};
-
-  ${(props) =>
-    props.sub &&
-    css`
-      font-size: 1.4rem;
-      font-weight: 600;
-      font-stretch: normal;
-      font-style: normal;
-      line-height: 1.14;
-      letter-spacing: -0.28px;
-      text-align: left;
-    `}
-
-  ${(props) =>
-    props.desc &&
-    css`
-      font-size: 1.4rem;
-      font-weight: normal;
-      margin-top: 0.4rem;
-    `}
-`;
-
-const Flex = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 2.1rem;
-
-  ${(props) =>
-    props.m &&
-    css`
-      margin-bottom: 1.1rem;
-    `}
-
-  ${(props) =>
-    props.img &&
-    css`
-      gap: 0.7rem;
-      margin-top: 1.2rem;
-    `}
-`;
-
-const StyledButton = styled.button`
-  width: 12.8rem;
-  height: 4.2rem;
-  padding: 1.15rem 2.15rem;
-  border-radius: 6px;
-  border: solid 1px #d8d8d8;
-  background-color: #fff;
-  font-size: 1.6rem;
-  font-weight: 600;
-  line-height: 1.19;
-  letter-spacing: -0.32px;
-  color: #606060;
-  white-space: nowrap;
-`;
-
-const IconImg = styled.img`
-  width: 3.9rem;
-  height: 3.9rem;
-`;
-
-const FooterMenu = styled.div`
-  margin-top: 3.9rem;
-`;
-
-const StyledList = styled.ul`
-  display: flex;
-  gap: 4.8rem;
-  margin-bottom: 2.1rem;
-`;
-
-const StyledItem = styled.li`
-  font-size: 1.8rem;
-  font-weight: 600;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.17;
-  letter-spacing: -0.36px;
-  color: ${(props) => props.theme.grey1_color};
-`;
-
-
-const Footer = () => {
     return (
-        <FooterBlock>
-            <Contents>
-                <Grid>
-                    
-                    <div>
-                        <StyledP sub>바로가기</StyledP>
-                        <StyledP desc>젯플린</StyledP>
-                        <StyledP desc>프로젝트</StyledP>
-                        <StyledP desc>스토리</StyledP>
-                        <StyledP desc>라운지</StyledP>
-                    </div>
-
-                    <div>
-                        <StyledP sub>이용안내</StyledP>
-                        <StyledP desc>공지사항</StyledP>
-                        <StyledP desc>FAQ</StyledP>
-                    </div>
-
-                    <div>
-                        <StyledP sub>관련사이트</StyledP>
-                        <StyledP desc>네이버 블로그</StyledP>
-                        <StyledP desc>티스토리 블로그</StyledP>
-                        <StyledP desc>인스타그램</StyledP>
-                        <StyledP desc>velog</StyledP>
-                    </div>
-
-                    <div>
-                        <StyledP sub>서비스약관</StyledP>
-                        <StyledP desc>서비스 이용약관</StyledP>
-                        <StyledP desc>개인정보 취급방침</StyledP>
-                        <StyledP desc>전자금융거래약관</StyledP>
-                        <StyledP desc>결제/환불약관</StyledP>
-                    </div>
-
+        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={3}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                    바로가기
+                </Typography>
+                <Demo>
+                    <List>
+                        <ListItem>
+                            <ListItemText
+                                primary="잿플린"
+                            />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText
+                                primary="프로젝트"
+                            />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText
+                                primary="스토리"
+                            />
+                        </ListItem>
+                        <ListItem>
+                            <ListItemText
+                                primary="라운지"
+                            />
+                        </ListItem>
+                    </List>
+                </Demo>
                 </Grid>
-            </Contents>
-        </FooterBlock>
+                <Grid item xs={12} md={3}>
+                <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                    이용안내
+                </Typography>
+                <Demo>
+                    <List>
+                        <ListItem>
+                        <ListItemText
+                            primary="공지사항"
+                        />
+                        </ListItem>
+                        <ListItem>
+                        <ListItemText
+                            primary="FAQ"
+                        />
+                        </ListItem>
+                    </List>
+                </Demo>
+                </Grid>
+                <Grid item xs={12} md={3}>
+                    <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                        관련사이트
+                    </Typography>
+                    <Demo>
+                        <List>
+                            <ListItem>
+                                <ListItemText
+                                    primary="네이버 블로그"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="티스토리 블로그"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="인스타그램"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="velog"
+                                />
+                            </ListItem>
+                        </List>
+                    </Demo>
+                </Grid>
+                <Grid item xs={12} md={3}>
+                    <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
+                        서비스약관
+                    </Typography>
+                    <Demo>
+                        <List>
+                            <ListItem>
+                                <ListItemText
+                                    primary="서비스 이용약관"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="개인정보 취급방침"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="전자금융거래약관"
+                                />
+                            </ListItem>
+                            <ListItem>
+                                <ListItemText
+                                    primary="결제/환불약관"
+                                />
+                            </ListItem>
+                        </List>
+                    </Demo>
+                </Grid>
+            </Grid>
+        </Box>
     );
-};
-
-export default Footer;
+}
