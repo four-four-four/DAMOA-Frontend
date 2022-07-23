@@ -1,38 +1,38 @@
 import React from 'react';
 import { StyledSideBar } from './common.styled';
 import { List, ListItem, ListItemIcon, ListItemButton, ListItemText } from '@mui/material';
-import InboxIcon from '@mui/icons-material/Inbox';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import BookmarkIcon from '@mui/icons-material/Bookmark';
+import Icon from '@mui/material/Icon';
 
-const MyPageSideBar = () => {
+const MyPageSideBar = ({ sidebarItems, handleFocus }) => {
+  const handleSidebarItem = (id) => {
+    handleFocus(id);
+    let scrollElement = document.getElementById(`${id}-wrapper`);
+
+    scrollElement.scrollIntoView({ behavior: 'smooth' });
+    sidebarItems.forEach((item, idx) => {
+      if (item.id == id) {
+        document.getElementById(`sidebar-label-${item.id}`).classList.add('selected-label');
+      } else {
+        document.getElementById(`sidebar-label-${item.id}`).classList.remove('selected-label');
+      }
+    });
+  };
   return (
     <StyledSideBar>
       <List>
-        <ListItem>
-          <ListItemButton>
-            <ListItemIcon>
-              <InboxIcon sx={{ margin: '0' }} />
-            </ListItemIcon>
-            <ListItemText primary="회원정보" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>
-            <ListItemIcon>
-              <AccountCircleIcon />
-            </ListItemIcon>
-            <ListItemText primary="키워드 관리" />
-          </ListItemButton>
-        </ListItem>
-        <ListItem>
-          <ListItemButton>
-            <ListItemIcon>
-              <BookmarkIcon />
-            </ListItemIcon>
-            <ListItemText primary="스크랩" />
-          </ListItemButton>
-        </ListItem>
+        {sidebarItems.map((item, idx) => (
+          <ListItem key={item.id}>
+            <ListItemButton
+              onClick={() => {
+                handleSidebarItem(item.id);
+              }}>
+              <ListItemIcon>
+                <Icon>{item.icon}</Icon>
+              </ListItemIcon>
+              <div id={`sidebar-label-${item.id}`}>{item.label}</div>
+            </ListItemButton>
+          </ListItem>
+        ))}
       </List>
     </StyledSideBar>
   );

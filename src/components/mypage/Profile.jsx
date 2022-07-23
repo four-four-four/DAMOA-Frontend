@@ -1,14 +1,6 @@
 import React from 'react';
 import { StyledBtnItem, StyledFormItem, StyledBox } from './common.styled';
-import {
-  Avatar,
-  Typography,
-  TextField,
-  Button,
-  FormControlLabel,
-  FormControl,
-  FormLabel
-} from '@mui/material';
+import { Avatar, Typography, TextField, Button } from '@mui/material';
 import { useObserver } from '../../hooks/useObserver';
 import { useRef } from 'react';
 import { useState } from 'react';
@@ -35,7 +27,7 @@ const Profile = ({ userDetail, handleEdit, handleSave, isEdit }) => {
   };
 
   return (
-    <>
+    <div id="profile-wrapper">
       <StyledBox container ref={ref} show={show} className="mypage-box">
         <StyledFormItem item xs={12} sx={{ marginBottom: '1rem' }}>
           <Avatar sx={{ alt: '사용자 이미지', width: 60, height: 60 }} />
@@ -83,7 +75,7 @@ const Profile = ({ userDetail, handleEdit, handleSave, isEdit }) => {
           )}
         </StyledBtnItem>
       </StyledBox>
-    </>
+    </div>
   );
 };
 
