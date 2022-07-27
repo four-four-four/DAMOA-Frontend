@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { StyledBox, StyledKeyWordItem, StyledBoard } from './common.styled';
+import { StyledBox, StyledKeyWordItem, StyledBoard } from './mypageCommon.styled';
 import { useObserver } from '../../hooks/useObserver';
 import CloseIcon from '@mui/icons-material/Close';
 import { Grid } from '@mui/material';

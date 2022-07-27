@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledSideBar } from './common.styled';
+import { StyledSideBar } from './mypageCommon.styled';
 import { List, ListItem, ListItemIcon, ListItemButton, ListItemText } from '@mui/material';
 import Icon from '@mui/material/Icon';
 
