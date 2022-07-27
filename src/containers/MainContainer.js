@@ -111,7 +111,9 @@ const AppWrap = styled.div`
 // };
 
 const MainWrapper = styled.div`
-  max-width: 100%;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: 0 auto;
   // padding-top: 10rem;
   // padding-bottom: 14.1rem;
 `;

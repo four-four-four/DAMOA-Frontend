@@ -34,7 +34,7 @@ export default function App() {
               <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
                 홈 (다모아 로고)
               </Link>
-              <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
+              <Link href="/todaymoa" color="inherit" underline="none" sx={{ marginRight: 2 }}>
                 오늘의 모아
               </Link>
               <Link href="/" color="inherit" underline="none" sx={{ marginRight: 2 }}>
