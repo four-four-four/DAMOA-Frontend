@@ -22,7 +22,7 @@ const Demo = styled('div')(({ theme }) => ({
 export default function InteractiveList() {
 
     return (
-        <Box sx={{ flexGrow: 1, maxWidth: 752 }}>
+        <Box sx={{ flexGrow: 1, maxWidth: 1920 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={3}>
                 <Typography sx={{ mt: 4, mb: 2 }} variant="h6" component="div">
