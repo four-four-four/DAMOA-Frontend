@@ -1,16 +1,9 @@
 import React from 'react';
 import { Route, Routes as Switch } from 'react-router-dom';
-import {
-  PATH_ROOT,
-  PATH_USER_LOGIN,
-  PATH_MY_PAGE,
-  PATH_NOTICE,
-  PATH_LOG_IN
-} from './constant/pathConstant';
 import LoginPage from './pages/Login/LoginPage';
 import {
   PATH_ROOT,
-  PATH_USER_LOGIN,
+  PATH_LOG_IN,
   PATH_MY_PAGE,
   PATH_NOTICE,
   PATH_TODAY_MOA
