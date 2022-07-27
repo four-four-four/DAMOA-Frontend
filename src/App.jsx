@@ -47,7 +47,9 @@ export default function App() {
 
             <IconButton size="large" aria-label="display more actions" edge="end" color="inherit">
               {/* 로그인 전 아이콘 */}
-              <LoginIcon />
+              <Link href="/login" color="inherit">
+                <LoginIcon />
+              </Link>
               {/* 로그인 후 아이콘 */}
               {/* <ArrowDropDownIcon /> */}
             </IconButton>

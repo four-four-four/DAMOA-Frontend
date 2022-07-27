@@ -9,6 +9,10 @@ import theme from './styles/theme';
 import { StyledEngineProvider, ThemeProvider } from '@mui/material/styles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+// hot reloading enable 나중에 빠질 코드 입니다
+if (module.hot) {
+  module.hot.accept();
+}
 
 root.render(
   <BrowserRouter>

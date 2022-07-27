@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledBtnItem, StyledFormItem, StyledBox } from './common.styled';
+import { StyledBtnItem, StyledFormItem, StyledBox } from './mypageCommon.styled';
 import { Avatar, Typography, TextField, Button } from '@mui/material';
 import { useObserver } from '../../hooks/useObserver';
 import { useRef } from 'react';

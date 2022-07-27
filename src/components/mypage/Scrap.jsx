@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { StyledBox } from './common.styled';
+import { StyledBox } from './mypageCommon.styled';
 import { useObserver } from '../../hooks/useObserver';
 
 const Scrap = () => {
