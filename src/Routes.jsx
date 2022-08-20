@@ -10,6 +10,7 @@ import {
   PATH_TODAY_MOA_DETAIL,
   PATH_FIELD_KEYWORD_MOA,
   PATH_SEARCH_KEYWORD_MOA,
+  PATH_SIGN_UP
 } from './constant/pathConstant';
 import MainPage from './pages/MainPage';
 import MyPage from './pages/MyPage/MyPage';
@@ -18,6 +19,7 @@ import TodayMoaPage from './pages/TodayMoaPage';
 import TodayMoaDeatailPage from './pages/TodayMoaDetail';
 import FiledKeywordPage from './pages/FiledKeywordPage';
 import SearchMoaPage from './pages/SearchMoaPage';
+import SignupPage from './pages/Signup/SignupPage';
 
 const Routes = () => (
     <Switch>

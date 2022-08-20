@@ -1,6 +1,11 @@
-import { Grid, TextField } from '@mui/material';
-import { withStyles } from '@mui/styles';
+import { Grid, Card } from '@mui/material';
 import styled from 'styled-components/';
+
+export const FormWrapper = styled(Card)((props) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
+}));
 
 export const StyledLoginForm = styled(Grid)((props) => ({
   display: 'flex',
@@ -15,17 +20,22 @@ export const StyledLoginForm = styled(Grid)((props) => ({
     borderRadius: '10px'
   },
 
-  '& .login-button': {
+  '& .anchor': {
+    textDecoration: 'none'
+  },
+
+  '& .form-button': {
+    marginBottom: '0.4rem',
     width: '25.5rem',
     height: '2rem',
     alignItems: 'center',
-    backgroundColor: '#B76E79',
     border: 0,
     borderRadius: '100px',
     boxSizing: 'border-box',
     color: '#ffffff',
     cursor: 'pointer',
     display: 'inline-flex',
+    backgroundColor: '#B76E79',
     fontFamily:
       '-apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif',
     fontSize: '16px',
@@ -55,6 +65,12 @@ export const StyledLoginForm = styled(Grid)((props) => ({
       color: '#ffffff'
     }
   }
+}));
+
+export const TestWrapper = styled(Card)((props) => ({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center'
 }));
 
 // <!-- HTML !-->
