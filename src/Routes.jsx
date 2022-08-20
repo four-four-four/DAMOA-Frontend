@@ -28,6 +28,7 @@ const Routes = () => (
         <Route path={PATH_NOTICE} element={<NoticePage />} />
         <Route path={PATH_LOG_IN} element={<LoginPage />} />
         <Route path={PATH_TODAY_MOA} element={<TodayMoaPage />} />
+        <Route path={PATH_SIGN_UP} elemnet={<SignupPage />} />
         <Route path={PATH_TODAY_MOA_DETAIL} element={<TodayMoaDeatailPage />} />
         <Route path={PATH_FIELD_KEYWORD_MOA} element={<FiledKeywordPage />} />
         <Route path={PATH_SEARCH_KEYWORD_MOA} element={<SearchMoaPage />} />
