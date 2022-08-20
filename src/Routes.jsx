@@ -8,12 +8,14 @@ import {
   PATH_NOTICE,
   PATH_TODAY_MOA,
   PATH_TODAY_MOA_DETAIL,
+  PATH_FIELD_KEYWORD_MOA,
 } from './constant/pathConstant';
 import MainPage from './pages/MainPage';
 import MyPage from './pages/MyPage/MyPage';
 import NoticePage from './pages/NoticePage';
 import TodayMoaPage from './pages/TodayMoaPage';
 import TodayMoaDeatailPage from './pages/TodayMoaDetail';
+import FiledKeywordPage from './pages/FiledKeywordPage';
 
 const Routes = () => (
     <Switch>
@@ -23,6 +25,7 @@ const Routes = () => (
         <Route path={PATH_LOG_IN} element={<LoginPage />} />
         <Route path={PATH_TODAY_MOA} element={<TodayMoaPage />} />
         <Route path={PATH_TODAY_MOA_DETAIL} element={<TodayMoaDeatailPage />} />
+        <Route path={PATH_FIELD_KEYWORD_MOA} element={<FiledKeywordPage />} />
     </Switch>
 );
 
