@@ -7,3 +7,4 @@ export const PATH_SIGN_UP = '/signup';
 export const PATH_TODAY_MOA = '/todaymoa';
 export const PATH_TODAY_MOA_DETAIL = '/todaymoadetail';
 export const PATH_FIELD_KEYWORD_MOA = '/filedKeyword';
+export const PATH_SEARCH_KEYWORD_MOA = '/searchMoa';
