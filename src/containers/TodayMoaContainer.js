@@ -3,21 +3,20 @@ import styled from 'styled-components';
 import FilterView from '../components/todaymoa/FilterView';
 import TodayMoaContent from '../components/todaymoa/TodayMoaContent';
 
-const MainViewBlock = styled.div`
+const TodayMoaBlock = styled.div`
     display: flex;
     max-width: 1920px;
     min-width: 320px;
     margin: 0 auto;
 `;
-const MainContainer = () => {
+const TodayMoaContainer = () => {
   
-
     return (
-        <MainViewBlock>
+        <TodayMoaBlock>
             <FilterView />
             <TodayMoaContent />
-        </MainViewBlock>
+        </TodayMoaBlock>
     );
 };
 
-export default MainContainer;
+export default TodayMoaContainer;

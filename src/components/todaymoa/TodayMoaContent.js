@@ -4,7 +4,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import PropTypes from 'prop-types';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -78,11 +77,13 @@ const TodayMoaContent = (pros) => {
                     {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
                         <Box key={index} sx={{ width: 210, margin: 'auto', my: 5 }}>
                         {item ? (
-                            <img
-                            style={{ width: 210, height: 118 }}
-                            alt={item.title}
-                            src={item.src}
-                            />
+                            <a href='./todaymoaDetail'>
+                                <img
+                                style={{ width: 210, height: 118 }}
+                                alt={item.title}
+                                src={item.src}
+                                />
+                            </a>
                         ) : (
                             <Skeleton variant="rectangular" width={210} height={118} />
                         )}
@@ -113,11 +114,13 @@ const TodayMoaContent = (pros) => {
                     {(loading ? Array.from(new Array(3)) : data).map((item, index) => (
                         <Box key={index} sx={{ width: 210, margin: 'auto', my: 5 }}>
                         {item ? (
-                            <img
-                            style={{ width: 210, height: 118 }}
-                            alt={item.title}
-                            src={item.src}
-                            />
+                            <a href='./todaymoaDetail'>
+                                <img
+                                style={{ width: 210, height: 118 }}
+                                alt={item.title}
+                                src={item.src}
+                                />
+                            </a>
                         ) : (
                             <Skeleton variant="rectangular" width={210} height={118} />
                         )}
