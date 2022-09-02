@@ -17,7 +17,8 @@ export const StyledLoginForm = styled(Grid)((props) => ({
     display: 'inline-block',
     marginBottom: '1rem',
     border: '1px solid silver',
-    borderRadius: '10px'
+    borderRadius: '10px',
+    padding: '0.25rem'
   },
 
   '& .anchor': {
