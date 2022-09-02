@@ -1,27 +1,27 @@
-import { Typography, TextField, Card } from '@mui/material';
+import { Typography } from '@mui/material';
 import React from 'react';
 import { StyledLoginForm, FormWrapper } from './loginCommon.styled';
 import { useForm } from 'react-hook-form';
 
 const LogIn = () => {
+  // Messages
+  const required = '필수 입력사항입니다';
+  const invalidEmail = '올바른 이메일 주소를 입력해주세요';
+  const pwdMinLength = '비밀번호는 최소 8자리이어야 합니다';
+  // Error Component
+  const errorMessage = (error) => {
+    return <div className="invalid-feedback">{error}</div>;
+  };
+
   const {
     register,
     handleSubmit,
     formState: { errors }
   } = useForm();
+
   const handleRegistration = (data) => console.log(data);
   const handleError = (errors) => {};
 
-  const registerOptions = {
-    email: { required: 'Email is required' },
-    password: {
-      required: 'Password is required',
-      minLength: {
-        value: 8,
-        message: 'Password must have at least 8 characters'
-      }
-    }
-  };
   return (
     <FormWrapper>
       <form>
@@ -36,21 +36,40 @@ const LogIn = () => {
             <Typography style={{ padding: '1rem' }}>로그인</Typography>
           </div>
           <div item xs={12}>
+            <small className="text-danger">
+              {errors?.email && errors.email.type == 'required' && errorMessage(required)}
+              {errors?.email && errors.email.type != 'required' && errorMessage(invalidEmail)}
+            </small>
             <input
               name="email"
-              {...register('email', registerOptions.email)}
               className="login-textInput"
               type="email"
+              {...register('email', {
+                required: true,
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'invalid email address'
+                }
+              })}
               placeholder="이메일"
             />
-            <small className="text-danger">{errors?.name && errors.name.message}</small>
           </div>
           <div item xs={12}>
+            <small className="text-danger">
+              {errors?.password && errors.password.type == 'required' && errorMessage(required)}
+              {errors?.password &&
+                errors.password.type == 'maxLength' &&
+                errorMessage(pwdMinLength)}
+            </small>
             <input
               name="password"
               {...register('password')}
               className="login-textInput"
               type="password"
+              {...register('password', {
+                required: true,
+                minLength: 8
+              })}
               placeholder="비밀번호"
             />
           </div>
